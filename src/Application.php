@@ -88,6 +88,36 @@ class Application extends BaseApplication
                 'httponly' => true,
             ]));
 
+        // --- INICIO: Criterio 4 - Internacionalización ---
+            $middlewareQueue->add(function ($request, $handler) {
+            $session = $request->getSession();
+            
+            // Intentamos leer de todas las formas posibles donde CakePHP guarda al usuario
+            // 1. Auth.User (Lo que tenías en el controlador)
+            // 2. Auth (Lo que pusimos en la corrección)
+            // 3. Identity (Estándar de CakePHP 5)
+            $user = $session->read('Auth.User') ?: $session->read('Auth');
+            
+            if (!$user) {
+                $user = $request->getAttribute('identity');
+            }
+
+            // Extraemos el lenguaje del objeto o del array
+            $langFromDb = is_object($user) ? ($user->language ?? 'es') : ($user['language'] ?? 'es');
+
+            // Mapeo estricto para que tu "en" active la carpeta en_US
+            if ($langFromDb === 'en') {
+                $locale = 'en_US';
+            } else {
+                $locale = 'es_BO';
+            }
+
+            \Cake\I18n\I18n::setLocale($locale);
+            
+            return $handler->handle($request);
+        });
+        // --- FIN: Criterio 4 ---
+
         return $middlewareQueue;
     }
 
