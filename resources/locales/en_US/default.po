@@ -1,0 +1,115 @@
+# --- INDEX DE CIUDADES ---
+msgid "Gestión de Ciudades (Núcleos Urbanos)"
+msgstr "City Management (Urban Centers)"
+
+msgid "Nueva Ciudad"
+msgstr "New City"
+
+msgid "Ciudad"
+msgstr "City"
+
+msgid "País"
+msgstr "Country"
+
+msgid "Población"
+msgstr "Population"
+
+msgid "Clima"
+msgstr "Weather"
+
+msgid "Superficie (km²)"
+msgstr "Area (sq km)"
+
+msgid "Altitud (msnm)"
+msgstr "Altitude (masl)"
+
+# --- FORMULARIO: AGREGAR / EDITAR CIUDAD (SEGÚN TU FOTO) ---
+msgid "Agregar Nueva Ciudad (Núcleo Urbano)"
+msgstr "Add New City (Urban Center)"
+
+msgid "Nombre de la Ciudad"
+msgstr "City Name"
+
+msgid "Country"
+msgstr "Country"
+
+msgid "Población Total"
+msgstr "Total Population"
+
+msgid "Clima Predominante"
+msgstr "Predominant Climate"
+
+msgid "Area (sq km)"
+msgstr "Area (sq km)"
+
+msgid "Altitude (masl)"
+msgstr "Altitude (masl)"
+
+msgid "GUARDAR CIUDAD"
+msgstr "SAVE CITY"
+
+# --- INDEX DE USUARIOS ---
+msgid "Administración de Usuarios Registrados"
+msgstr "Registered User Administration"
+
+msgid "Gestionar Ciudades"
+msgstr "Manage Cities"
+
+msgid "New User"
+msgstr "Add User"
+
+msgid "Idioma"
+msgstr "Language"
+
+msgid "Creado"
+msgstr "Created At"
+
+msgid "Nombre"
+msgstr "First Name"
+
+msgid "Apellido"
+msgstr "Last Name"
+
+msgid "Teléfono"
+msgstr "Phone Number"
+
+msgid "Correo"
+msgstr "Email"
+
+# --- SIDEBAR Y NAVEGACIÓN ---
+msgid "Listar Ciudades"
+msgstr "List Cities"
+
+msgid "Ir a Usuarios"
+msgstr "Go to Users"
+
+msgid "Ver Usuarios"
+msgstr "See Users"
+
+msgid "Logout"
+msgstr "Logout"
+
+# --- ACCIONES COMUNES ---
+msgid "Acciones"
+msgstr "Actions"
+
+msgid "Actions"
+msgstr "Actions"
+
+msgid "Editar"
+msgstr "Edit"
+
+msgid "Edit"
+msgstr "Edit"
+
+msgid "Borrar"
+msgstr "Delete"
+
+msgid "Delete"
+msgstr "Delete"
+
+msgid "View"
+msgstr "View"
+
+msgid "ID"
+msgstr "ID"
