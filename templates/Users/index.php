@@ -17,11 +17,11 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id') ?></th>
-                    <th><?= $this->Paginator->sort('nombre') ?></th>
-                    <th><?= $this->Paginator->sort('apellido') ?></th>
-                    <th><?= $this->Paginator->sort('telefono') ?></th>
-                    <th><?= $this->Paginator->sort('correo') ?></th>
+                    <th><?= $this->Paginator->sort('id', __('ID')) ?></th>
+                    <th><?= $this->Paginator->sort('nombre', __('Nombre')) ?></th>
+                    <th><?= $this->Paginator->sort('apellido', __('Apellido')) ?></th>
+                    <th><?= $this->Paginator->sort('telefono', __('Teléfono')) ?></th>
+                    <th><?= $this->Paginator->sort('correo', __('Correo')) ?></th>
                     <th><?= $this->Paginator->sort('language', __('Idioma')) ?></th>
                     <th><?= $this->Paginator->sort('created', __('Creado')) ?></th>
                     

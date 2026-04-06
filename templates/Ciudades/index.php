@@ -17,14 +17,14 @@
         <table>
             <thead>
                 <tr>
-                    <th><?= $this->Paginator->sort('id', 'ID') ?></th>
-                    <th><?= $this->Paginator->sort('nombre', 'Ciudad') ?></th>
-                    <th><?= $this->Paginator->sort('pais', 'País') ?></th>
-                    <th><?= $this->Paginator->sort('poblacion', 'Población') ?></th>
+                    <th><?= $this->Paginator->sort('id', __('ID')) ?></th>
+                    <th><?= $this->Paginator->sort('nombre', __('Ciudad')) ?></th>
+                    <th><?= $this->Paginator->sort('pais', __('País')) ?></th>
+                    <th><?= $this->Paginator->sort('poblacion', __('Población')) ?></th>
                     
-                    <th><?= $this->Paginator->sort('clima', 'Clima') ?></th>
-                    <th><?= $this->Paginator->sort('superficie_km2', 'Superficie (km²)') ?></th>
-                    <th><?= $this->Paginator->sort('altitud_msnm', 'Altitud (msnm)') ?></th>
+                    <th><?= $this->Paginator->sort('clima', __('Clima')) ?></th>
+                    <th><?= $this->Paginator->sort('superficie_km2', __('Superficie (km²)')) ?></th>
+                    <th><?= $this->Paginator->sort('altitud_msnm', __('Altitud (msnm)')) ?></th>
                     
                     <th class="actions"><?= __('Acciones') ?></th>
                 </tr>
@@ -47,7 +47,7 @@
                 <?php endforeach; ?>
                 <?php if (count($ciudades) == 0): ?>
                     <tr>
-                        <td colspan="8" style="text-align: center;">No hay ciudades registradas. Haz clic en "Nueva Ciudad".</td>
+                        <td colspan="8" style="text-align: center;"><?= __('No hay ciudades registradas. Haz clic en "Nueva Ciudad".') ?></td>
                     </tr>
                 <?php endif; ?>
             </tbody>
