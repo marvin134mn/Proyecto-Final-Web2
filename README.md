@@ -1,58 +1,37 @@
-# CakePHP Application Skeleton
+# 🚀 Sistema de Gestión de Ciudades - Examen Final Progra Web II
+**Autor:** Marvin  
+**Institución:** Universidad Privada de Santa Cruz (UPDS)  
+**Fecha:** Abril 2026
 
-![Build Status](https://github.com/cakephp/app/actions/workflows/ci.yml/badge.svg?branch=5.x)
-[![Total Downloads](https://img.shields.io/packagist/dt/cakephp/app.svg?style=flat-square)](https://packagist.org/packages/cakephp/app)
-[![PHPStan](https://img.shields.io/badge/PHPStan-level%208-brightgreen.svg?style=flat-square)](https://github.com/phpstan/phpstan)
+## 📋 Descripción del Proyecto
+Desarrollo de una plataforma web integral para la gestión de entidades geográficas (Ciudades) y administración de usuarios, implementando patrones de diseño modernos y despliegue automatizado en contenedores.
 
-A skeleton for creating applications with [CakePHP](https://cakephp.org) 5.x.
+---
 
-The framework source code can be found here: [cakephp/cakephp](https://github.com/cakephp/cakephp).
+## 🛠️ Stack Tecnológico
+* **Framework:** [CakePHP 5.x](https://cakephp.org/) (Strawberry)
+* **Lenguaje:** PHP 8.4.0 (Optimized Runtime)
+* **Base de Datos:** MariaDB 10.11
+* **Infraestructura:** Podman / Docker Compose
+* **Servidor Web:** Apache 2.4 con `mod_rewrite` activo
+* **Control de Versiones:** Git (GitHub)
 
-## Installation
+---
 
-1. Download [Composer](https://getcomposer.org/doc/00-intro.md) or update `composer self-update`.
-2. Run `php composer.phar create-project --prefer-dist cakephp/app [app_name]`.
+## 🏗️ Arquitectura de la Solución
+El proyecto sigue el patrón **MVC (Modelo-Vista-Controlador)** con una capa adicional de **Middleware** para la gestión de internacionalización (i18n).
 
-If Composer is installed globally, run
+### Componentes Clave:
+1.  **Capa de Datos:** Migraciones y Seeds para la consistencia de la DB.
+2.  **Lógica de Negocio:** Controllers optimizados para operaciones CRUD.
+3.  **Seguridad:** Componente de Autenticación integrado para protección de rutas.
+4.  **Multi-idioma:** Soporte nativo para `es_BO` y `en_US` mediante archivos de localización `.po`.
 
+---
+
+## 🚀 Guía de Despliegue (Entorno Linux/VM)
+
+### 1. Clonar y Configurar
 ```bash
-composer create-project --prefer-dist cakephp/app
-```
-
-In case you want to use a custom app dir name (e.g. `/myapp/`):
-
-```bash
-composer create-project --prefer-dist cakephp/app myapp
-```
-
-You can now either use your machine's webserver to view the default home page, or start
-up the built-in webserver with:
-
-```bash
-bin/cake server -p 8765
-```
-
-Then visit `http://localhost:8765` to see the welcome page.
-
-## Demo app
-
-Check out the [5.x-demo branch](https://github.com/cakephp/app/tree/5.x-demo), which contains demo migrations and a seeder.
-See the [README](https://github.com/cakephp/app/blob/5.x-demo/README.md) on how to get it running.
-
-## Update
-
-Since this skeleton is a starting point for your application and various files
-would have been modified as per your needs, there isn't a way to provide
-automated upgrades, so you have to do any updates manually.
-
-## Configuration
-
-Read and edit the environment specific `config/app_local.php` and set up the
-`'Datasources'` and any other configuration relevant for your application.
-Other environment agnostic settings can be changed in `config/app.php`.
-
-## Layout
-
-The app skeleton uses [Milligram](https://milligram.io/) (v1.3) minimalist CSS
-framework by default. You can, however, replace it with any other library or
-custom styles.
+git clone git@github.com:marvin134mn/Proyecto-Final-Web2.git
+cd Proyecto-Final-Web2
