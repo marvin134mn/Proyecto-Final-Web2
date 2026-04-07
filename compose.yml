@@ -1,7 +1,10 @@
 services:
   php-app:
+    build: .
     image: ef-app
     container_name: ef-app
     ports:
       - "8080:80"
     restart: unless-stopped
+    volumes:
+      - .:/var/www/html

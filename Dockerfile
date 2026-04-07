@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Copiar proyecto
-COPY app_ef/ /var/www/html/
+COPY . /var/www/html/
 
 # Permisos
 RUN chown -R www-data:www-data /var/www/html && \
