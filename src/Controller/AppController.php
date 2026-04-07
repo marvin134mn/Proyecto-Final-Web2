@@ -54,24 +54,34 @@ class AppController extends Controller
 {
     parent::beforeFilter($event);
 
-    // 1. Prioridad: ¿El usuario hizo clic en un idioma del login?
-    $lang = $this->request->getQuery('lang');
-    
-    if ($lang) {
-        // Si hizo clic, lo guardamos en la sesión para que el login cambie
-        \Cake\I18n\I18n::setLocale($lang);
-        $this->getRequest()->getSession()->write('Config.language', $lang);
-    } else {
-        // 2. Si no hizo clic, revisamos si ya está logueado para usar su preferencia de la DB
-        if (isset($this->Authentication) && $this->Authentication->getResult()->isValid()) {
-            $user = $this->Authentication->getIdentity();
-            $lang = $user->idioma;
+    // 1. Detectamos en qué página estamos
+    $controller = $this->request->getParam('controller');
+    $action = $this->request->getParam('action');
+
+    // 2. LÓGICA PARA EL LOGIN (Botones manuales)
+    if ($controller === 'Users' && $action === 'login') {
+        
+        $lang = $this->request->getQuery('lang'); // Captura el ?lang=es o ?lang=en de los botones
+        
+        if ($lang) {
             \Cake\I18n\I18n::setLocale($lang);
+            $this->getRequest()->getSession()->write('Config.language', $lang);
         } else {
-            // 3. Si no está logueado y no hizo clic, intentamos leer lo que había en la sesión
+            // Si no presionó nada, intenta mantener lo que ya estaba en la sesión del login
             $sessionLang = $this->getRequest()->getSession()->read('Config.language');
             if ($sessionLang) {
                 \Cake\I18n\I18n::setLocale($sessionLang);
+            }
+        }
+    } 
+    // 3. LÓGICA PARA TODO LO DEMÁS (Base de Datos)
+    else {
+        if (isset($this->Authentication) && $this->Authentication->getResult()->isValid()) {
+            $user = $this->Authentication->getIdentity();
+            
+            // Usamos la columna 'languaje' de tu SQL Server
+            if (!empty($user->languaje)) {
+                \Cake\I18n\I18n::setLocale($user->languaje);
             }
         }
     }

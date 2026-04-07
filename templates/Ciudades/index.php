@@ -5,7 +5,7 @@
  */
 ?>
 <div class="ciudades index content">
-    <?= $this->Html->link(__('Logout'), ['controller' => 'Users', 'action' => 'logout'], ['class' => 'button secondary float-right', 'style' => 'background: #d33; margin-left: 10px;']) ?>
+    <?= $this->Html->link(__('Cerrar Sesión'), ['controller' => 'Users', 'action' => 'logout'], ['class' => 'button secondary float-right', 'style' => 'background: #d33; margin-left: 10px;']) ?>
     
     <?= $this->Html->link(__('Ver Usuarios'), ['controller' => 'Users', 'action' => 'index'], ['class' => 'button float-right', 'style' => 'background: #5d6d7e; margin-left: 10px;']) ?>
     

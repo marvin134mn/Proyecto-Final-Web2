@@ -17,6 +17,7 @@ use Cake\ORM\Entity;
  * @property \Cake\I18n\DateTime $modified
  * @property string|null $password
  * @property string|null $language
+ * @property string|null $role
  */
 class User extends Entity
 {
@@ -38,6 +39,7 @@ class User extends Entity
         'modified' => true,
         'password' => true,
         'language' => true,
+        'role' => true,
     ];
 
     /**

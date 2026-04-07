@@ -70,8 +70,16 @@
                         letter-spacing: 1px;
                         color: white;
                         cursor: pointer;
+                        margin-bottom: 15px;
                     '
                 ]); ?>
+                
+                <p style="color: #666; font-size: 0.9rem;">
+                    <?= __('¿No tienes una cuenta?') ?> 
+                    <?= $this->Html->link(__('Regístrate aquí'), ['action' => 'add'], [
+                        'style' => 'color: #d33; font-weight: bold; text-decoration: none;'
+                    ]) ?>
+                </p>
             </div>
             <?= $this->Form->end() ?>
             

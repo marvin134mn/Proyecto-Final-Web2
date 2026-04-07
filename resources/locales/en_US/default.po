@@ -42,7 +42,7 @@ msgstr "Predominant Climate"
 msgid "Area (sq km)"
 msgstr "Area (sq km)"
 
-msgid "Altitude (masl)"
+msgid "Altitud (masl)"
 msgstr "Altitude (masl)"
 
 msgid "GUARDAR CIUDAD"
@@ -55,8 +55,11 @@ msgstr "Registered User Administration"
 msgid "Gestionar Ciudades"
 msgstr "Manage Cities"
 
-msgid "New User"
+msgid "Nuevo Usuario"
 msgstr "Add User"
+
+msgid "GUARDAR USUARIO"
+msgstr "SAVE USER"
 
 msgid "Idioma"
 msgstr "Language"
@@ -76,6 +79,13 @@ msgstr "Phone Number"
 msgid "Correo"
 msgstr "Email"
 
+msgid "Acciones"
+msgstr "Actions"
+
+msgid "Listar Usuarios"
+msgstr "List Users"
+
+
 # --- SIDEBAR Y NAVEGACIÓN ---
 msgid "Listar Ciudades"
 msgstr "List Cities"
@@ -86,30 +96,24 @@ msgstr "Go to Users"
 msgid "Ver Usuarios"
 msgstr "See Users"
 
-msgid "Logout"
+msgid "Cerrar Sesión"
 msgstr "Logout"
 
 # --- ACCIONES COMUNES ---
 msgid "Acciones"
 msgstr "Actions"
 
-msgid "Actions"
-msgstr "Actions"
-
 msgid "Editar"
-msgstr "Edit"
-
-msgid "Edit"
 msgstr "Edit"
 
 msgid "Borrar"
 msgstr "Delete"
 
-msgid "Delete"
-msgstr "Delete"
-
-msgid "View"
+msgid "Vista"
 msgstr "View"
+
+msgid "Guardar"
+msgstr "Submit"
 
 msgid "ID"
 msgstr "ID"
