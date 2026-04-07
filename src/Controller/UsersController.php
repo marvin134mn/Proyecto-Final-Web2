@@ -41,20 +41,30 @@ class UsersController extends AppController
      *
      * @return \Cake\Http\Response|null|void Redirects on successful add, renders view otherwise.
      */
-    public function add()
-    {
-        $user = $this->Users->newEmptyEntity();
-        if ($this->request->is('post')) {
-            $user = $this->Users->patchEntity($user, $this->request->getData());
-            if ($this->Users->save($user)) {
-                $this->Flash->success(__('The user has been saved.'));
+public function add()
+{
+    $user = $this->Users->newEmptyEntity();
+    if ($this->request->is('post')) {
+        // Atrapamos los datos del formulario
+        $user = $this->Users->patchEntity($user, $this->request->getData());
+        
+        // REVISIÓN DE ROL: 
+        // Leemos la sesión manual que creaste en tu función login()
+        $sessionUser = $this->request->getSession()->read('Auth.User');
 
-                return $this->redirect(['action' => 'index']);
-            }
-            $this->Flash->error(__('The user could not be saved. Please, try again.'));
+        // Si NO hay nadie logueado o el que está no es 'admin', se le clava el rol 'cliente'
+        if (!$sessionUser || $sessionUser['role'] !== 'admin') {
+            $user->role = 'cliente';
         }
-        $this->set(compact('user'));
+
+        if ($this->Users->save($user)) {
+            $this->Flash->success(__('Registro exitoso. Ya puedes iniciar sesión.'));
+            return $this->redirect(['action' => 'login']);
+        }
+        $this->Flash->error(__('No se pudo guardar el usuario. Inténtalo de nuevo.'));
     }
+    $this->set(compact('user'));
+}
 
     /**
      * Edit method
