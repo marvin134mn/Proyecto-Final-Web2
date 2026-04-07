@@ -50,16 +50,30 @@ class AppController extends Controller
          */
         //$this->loadComponent('FormProtection');
     }
-    public function beforeFilter(EventInterface $event)
-    {
-        parent::beforeFilter($event);
-        
-        // Obtenemos el usuario de la sesión
-        $user = $this->request->getSession()->read('Auth.User');
+    public function beforeFilter(\Cake\Event\EventInterface $event)
+{
+    parent::beforeFilter($event);
 
-        // Si NO hay usuario y NO estamos en login o logout, mandarlo al login
-        if (!$user && !in_array($this->request->getParam('action'), ['login', 'logout'])) {
-            return $this->redirect(['controller' => 'Users', 'action' => 'login']);
+    // 1. Prioridad: ¿El usuario hizo clic en un idioma del login?
+    $lang = $this->request->getQuery('lang');
+    
+    if ($lang) {
+        // Si hizo clic, lo guardamos en la sesión para que el login cambie
+        \Cake\I18n\I18n::setLocale($lang);
+        $this->getRequest()->getSession()->write('Config.language', $lang);
+    } else {
+        // 2. Si no hizo clic, revisamos si ya está logueado para usar su preferencia de la DB
+        if (isset($this->Authentication) && $this->Authentication->getResult()->isValid()) {
+            $user = $this->Authentication->getIdentity();
+            $lang = $user->idioma;
+            \Cake\I18n\I18n::setLocale($lang);
+        } else {
+            // 3. Si no está logueado y no hizo clic, intentamos leer lo que había en la sesión
+            $sessionLang = $this->getRequest()->getSession()->read('Config.language');
+            if ($sessionLang) {
+                \Cake\I18n\I18n::setLocale($sessionLang);
+            }
         }
     }
+}
 }

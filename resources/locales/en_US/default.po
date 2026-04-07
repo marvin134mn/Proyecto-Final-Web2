@@ -113,3 +113,21 @@ msgstr "View"
 
 msgid "ID"
 msgstr "ID"
+
+msgid "LOGIN"
+msgstr "LOGIN"
+
+msgid "Correo Electrónico"
+msgstr "Email Address"
+
+msgid "Contraseña"
+msgstr "Password"
+
+msgid "ACCEDER AL SISTEMA"
+msgstr "SIGN IN"
+
+msgid "Por favor, ingresa tus credenciales"
+msgstr "Please enter your credentials"
+
+msgid "Marvin Proyecto Final Sistemas"
+msgstr "Marvin - Systems Engineering Final Project"
